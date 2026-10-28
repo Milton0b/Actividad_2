@@ -5,55 +5,37 @@
 ## Prompts utilizados (mínimo 5)
 
 ### Prompt 1
-- **Herramienta:** _(Claude / Gemini / Opencode / otra)_
-- **Prompt (copiado tal cual):**
-  > _(pega aquí el prompt)_
-- **Respuesta de la IA (resumen):** _(qué te dio)_
-- **¿Funcionó a la primera?** _(sí / no)_
-- **Qué corregí o ajusté:** _(describe)_
+Te voy a pasar una API para consultar recetas: [API]. Todavía NO generes código ni archivos. Solo dime qué datos devuelve (campos, tipos, parámetros de búsqueda y filtros disponibles, límites) para decidir qué implementar. Después te pediré una app web con barra de búsqueda y filtro arriba y las recetas en fichas debajo.
 
 ### Prompt 2
-- **Herramienta:**
-- **Prompt (copiado tal cual):**
-  > 
-- **Respuesta de la IA (resumen):**
-- **¿Funcionó a la primera?**
-- **Qué corregí o ajusté:**
+Trabajaremos en dos fases.
+Fase 1 (ahora): analiza esta API de recetas: [API]. Dime qué datos entrega, qué parámetros acepta y qué filtros permite. No escribas código ni crees archivos.
+Fase 2 (cuando yo confirme): construirás un buscador de recetas con barra de búsqueda y filtro en la parte superior y las recetas en fichas individuales, una tras otra, debajo.
+Responde solo la Fase 1.
 
 ### Prompt 3
-- **Herramienta:**
-- **Prompt (copiado tal cual):**
-  > 
-- **Respuesta de la IA (resumen):**
-- **¿Funcionó a la primera?**
-- **Qué corregí o ajusté:**
+Actúa como desarrollador web front-end. Voy a consultar recetas con esta API: [API]. Antes de programar, entrégame un informe de qué información ofrece (campos, ejemplos de respuesta, parámetros, filtros y limitaciones) y qué funciones podríamos implementar con ella. No generes nada más hasta que yo te lo pida.
 
 ### Prompt 4
-- **Herramienta:**
-- **Prompt (copiado tal cual):**
-  > 
-- **Respuesta de la IA (resumen):**
-- **¿Funcionó a la primera?**
-- **Qué corregí o ajusté:**
+Analiza esta API de recetas: [API]. No generes código ni archivos todavía. Responde con:
+1. Campos que devuelve cada receta (nombre, tipo, ejemplo).
+2. Parámetros de búsqueda y filtros disponibles.
+3. Límites (peticiones, resultados, API key).
+4. Funciones que podemos implementar con estos datos.
+5. Datos que NO ofrece y que conviene considerar.
 
 ### Prompt 5
-- **Herramienta:**
-- **Prompt (copiado tal cual):**
-  > 
-- **Respuesta de la IA (resumen):**
-- **¿Funcionó a la primera?**
-- **Qué corregí o ajusté:**
+Proyecto: buscador de recetas con esta API: [API].
+Entrega final (aún NO la hagas):
+- Carpeta del proyecto con una subcarpeta para CSS y JS.
+- Fuera de esa subcarpeta: el HTML, un MD con la estructura inicial y otro MD con las características del proyecto.
+- Interfaz: barra de búsqueda y filtro arriba; debajo, todas las recetas en fichas individuales, una tras otra.
+Primero dime qué datos me da la API para decidir qué implementar. Espera mi confirmación antes de crear algo.
 
 ## Un error de la IA que detecté
 
-- **Qué falló:** _(código que no corría, función inexistente, solución insegura o ineficiente)_
-- **Cómo lo detecté:**
-- **Cómo lo resolví:**
-
 ## Qué aprendí
-
-_(escribe aquí)_
+A leer con cuidado todo lo esencial antes de tratar de ejecutar un código
 
 ## Qué haría distinto la próxima vez al pedir ayuda a la IA
-
-_(escribe aquí)_
+Tener las herramientas adecuadas para la ocasión
