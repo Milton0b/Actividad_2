@@ -1,0 +1,145 @@
+:root {
+  --fondo: #faf6f0;
+  --tarjeta: #ffffff;
+  --texto: #2a2320;
+  --suave: #6b605a;
+  --primario: #c2410c;
+  --primario-oscuro: #9a3412;
+  --borde: #e6dccf;
+  --error: #b3261e;
+  --error-fondo: #fdecea;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--fondo);
+  color: var(--texto);
+  line-height: 1.5;
+}
+
+.oculto {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
+.encabezado {
+  background: var(--primario);
+  color: #fff;
+  padding: 22px 16px;
+  text-align: center;
+}
+.encabezado h1 { margin: 0 0 4px; font-size: 1.6rem; }
+.encabezado p { margin: 0; opacity: 0.92; }
+
+/* Barra superior con búsqueda y filtros */
+.barra {
+  background: var(--tarjeta);
+  border-bottom: 1px solid var(--borde);
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.busqueda { display: flex; gap: 10px; flex-wrap: wrap; }
+.busqueda input { flex: 1 1 260px; }
+
+.filtros {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: flex-end;
+}
+.campo { display: flex; flex-direction: column; gap: 4px; flex: 1 1 150px; }
+.campo label { font-size: 0.85rem; color: var(--suave); }
+
+input, select {
+  padding: 10px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: #fff;
+  color: var(--texto);
+}
+input:focus-visible, select:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 3px solid rgba(194, 65, 12, 0.35);
+  outline-offset: 1px;
+}
+
+button {
+  padding: 10px 18px;
+  border: 0;
+  border-radius: 8px;
+  background: var(--primario);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover { background: var(--primario-oscuro); }
+button:disabled { opacity: 0.6; cursor: wait; }
+button.secundario {
+  background: transparent;
+  color: var(--primario);
+  border: 1px solid var(--primario);
+}
+button.secundario:hover { background: rgba(194, 65, 12, 0.08); }
+
+.contenedor { max-width: 1100px; margin: 0 auto; padding: 16px 16px 40px; }
+
+.estado { min-height: 1.4em; margin-bottom: 12px; color: var(--suave); }
+.estado.error {
+  color: var(--error);
+  background: var(--error-fondo);
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+/* Recetas en filas de fichas individuales */
+.lista {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  align-items: start;
+}
+
+.ficha {
+  background: var(--tarjeta);
+  border: 1px solid var(--borde);
+  border-radius: 12px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.ficha-titulo { margin: 0; font-size: 1.15rem; line-height: 1.3; }
+.ficha-porciones { margin: 0; color: var(--suave); font-size: 0.9rem; }
+
+.datos { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; }
+.dato {
+  background: var(--fondo);
+  border-radius: 8px;
+  padding: 8px 10px;
+  display: flex;
+  flex-direction: column;
+}
+.dato-valor { font-weight: 700; }
+.dato-nombre { font-size: 0.8rem; color: var(--suave); }
+
+.desplegable { border-top: 1px solid var(--borde); padding-top: 8px; }
+.desplegable summary { cursor: pointer; font-weight: 600; color: var(--primario); }
+.desplegable ul, .desplegable ol { margin: 8px 0 0; padding-left: 20px; font-size: 0.92rem; }
+.desplegable li { margin-bottom: 4px; }
+
+.pie { text-align: center; padding: 16px; color: var(--suave); font-size: 0.85rem; }
+
+@media (max-width: 480px) {
+  .encabezado h1 { font-size: 1.3rem; }
+  .lista { grid-template-columns: 1fr; }
+}

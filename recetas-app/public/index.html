@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consulta de Recetas</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="encabezado">
+    <h1>Consulta de Recetas</h1>
+    <p>Busca una receta y filtra los resultados por calorías o ingrediente.</p>
+  </header>
+
+  <!-- Barra superior: búsqueda y filtros -->
+  <section class="barra" aria-label="Búsqueda y filtros">
+    <form id="form-busqueda" class="busqueda">
+      <label for="titulo" class="oculto">Buscar receta</label>
+      <input id="titulo" type="text" placeholder="Busca una receta en inglés (ej. pasta, chicken soup)" maxlength="60" autocomplete="off" required>
+      <button type="submit">Buscar</button>
+    </form>
+
+    <div class="filtros">
+      <div class="campo">
+        <label for="filtro-calorias">Calorías</label>
+        <select id="filtro-calorias">
+          <option value="">Todas</option>
+          <option value="bajo">Hasta 300</option>
+          <option value="medio">301 a 600</option>
+          <option value="alto">Más de 600</option>
+        </select>
+      </div>
+      <div class="campo">
+        <label for="filtro-ingrediente">Ingrediente</label>
+        <input id="filtro-ingrediente" type="text" placeholder="ej. garlic" autocomplete="off">
+      </div>
+      <div class="campo">
+        <label for="orden">Ordenar por</label>
+        <select id="orden">
+          <option value="">Sin orden</option>
+          <option value="cal-asc">Menos calorías</option>
+          <option value="cal-desc">Más calorías</option>
+          <option value="prot-desc">Más proteína</option>
+          <option value="titulo">Nombre (A-Z)</option>
+        </select>
+      </div>
+      <button type="button" id="limpiar" class="secundario">Limpiar filtros</button>
+    </div>
+  </section>
+
+  <main class="contenedor">
+    <div id="estado" class="estado" role="status" aria-live="polite"></div>
+    <div id="lista" class="lista"></div>
+  </main>
+
+  <footer class="pie">
+    <p>Datos: API Ninjas Recipe API · Proyecto escolar</p>
+  </footer>
+
+  <script src="js/logica.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
